@@ -1,38 +1,38 @@
-@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap");
 
 :root {
-  --bg: #f4efe4;
-  --bg-soft: #ebe4d4;
-  --ink: #181713;
-  --muted: #706b5d;
-  --line: rgba(24, 23, 19, 0.16);
-  --card: rgba(255, 252, 244, 0.82);
-  --card-strong: #fffaf0;
-  --accent: #b88b36;
-  --accent-soft: #ead19c;
-  --green: #5d7b63;
-  --shadow: rgba(37, 32, 20, 0.12);
+  --bg: #f8fafb;
+  --bg-soft: #e8f0f5;
+  --ink: #101113;
+  --muted: #5f666d;
+  --line: rgba(16, 17, 19, 0.16);
+  --card: rgba(255, 255, 252, 0.9);
+  --card-strong: #ffffff;
+  --accent: #7c9cb3;
+  --accent-soft: #dcebf3;
+  --green: #6f8f80;
+  --shadow: rgba(18, 31, 42, 0.12);
   --dog: #d6a33f;
   --dog-dark: #936d25;
-  --radius-big: 30px;
+  --radius-big: 28px;
   --radius-mid: 18px;
-  --mono: "Courier Prime", "SFMono-Regular", "Cascadia Mono", monospace;
-  --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  --mono: "IBM Plex Mono", "SFMono-Regular", "Cascadia Mono", monospace;
+  --sans: "Space Grotesk", Inter, ui-sans-serif, system-ui, sans-serif;
+  --display: "Fraunces", Georgia, serif;
 }
 
 [data-theme="dark"] {
-  --bg: #071323;
-  --bg-soft: #0d1b2f;
-  --ink: #e8eef9;
-  --muted: #a8b4c7;
-  --line: rgba(232, 238, 249, 0.15);
-  --card: rgba(13, 27, 47, 0.88);
-  --card-strong: #10223b;
-  --accent: #f2c66d;
-  --accent-soft: #2f4e67;
-  --green: #70e0c1;
-  --shadow: rgba(0, 0, 0, 0.32);
+  --bg: #07111c;
+  --bg-soft: #0d1b2c;
+  --ink: #f1f6fb;
+  --muted: #9eabba;
+  --line: rgba(241, 246, 251, 0.16);
+  --card: rgba(11, 24, 39, 0.92);
+  --card-strong: #102236;
+  --accent: #9ccce3;
+  --accent-soft: #1b3d54;
+  --green: #8ad6be;
+  --shadow: rgba(0, 0, 0, 0.35);
   --dog: #edb957;
   --dog-dark: #b88633;
 }
@@ -73,13 +73,20 @@ button {
   position: fixed;
   inset: 0;
   z-index: 0;
-  opacity: 0.35;
+  opacity: 0.42;
   background-image:
-    radial-gradient(circle at 20% 20%, rgba(184, 139, 54, 0.08), transparent 24%),
-    radial-gradient(circle at 85% 15%, rgba(93, 123, 99, 0.1), transparent 28%),
-    linear-gradient(rgba(24, 23, 19, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(24, 23, 19, 0.025) 1px, transparent 1px);
-  background-size: auto, auto, 28px 28px, 28px 28px;
+    radial-gradient(circle, rgba(16, 17, 19, 0.22) 1px, transparent 1.3px),
+    linear-gradient(rgba(124, 156, 179, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 156, 179, 0.12) 1px, transparent 1px);
+  background-size: 26px 26px, 52px 52px, 52px 52px;
+}
+
+[data-theme="dark"] .paper-noise {
+  opacity: 0.22;
+  background-image:
+    radial-gradient(circle, rgba(241, 246, 251, 0.22) 1px, transparent 1.3px),
+    linear-gradient(rgba(156, 204, 227, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(156, 204, 227, 0.1) 1px, transparent 1px);
 }
 
 [data-theme="dark"] .paper-noise {
@@ -1792,4 +1799,101 @@ footer {
   .skills-strip .skills-board {
     grid-template-columns: 1fr;
   }
+}
+/* cleaner personal typography */
+
+.hero h1,
+.about-section h2,
+.section-header h2,
+.worlds-section h2,
+.notes-section h2,
+.contact-section h2 {
+  font-family: var(--display);
+  letter-spacing: -0.045em;
+  font-weight: 700;
+}
+
+.project-card h3,
+.world-detail h3,
+.award-card h3,
+.note-card h3 {
+  font-family: var(--sans);
+  letter-spacing: -0.045em;
+  font-weight: 700;
+}
+
+.eyebrow,
+.project-topline,
+.award-topline,
+.window-bar,
+.wordmark {
+  font-family: var(--mono);
+}
+
+body,
+.project-card p,
+.about-card p,
+.world-detail p,
+.award-card p,
+.note-card p {
+  font-family: var(--sans);
+}
+/* more handmade, less template */
+
+.about-card,
+.project-card,
+.world-detail,
+.note-card,
+.award-card,
+.skills-strip,
+.archive-window {
+  border: 1.5px solid var(--line);
+  box-shadow: 8px 8px 0 color-mix(in srgb, var(--ink) 10%, transparent);
+  backdrop-filter: none;
+}
+
+.project-card:hover,
+.skill-card:hover,
+.award-card:hover,
+.note-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 10px 10px 0 color-mix(in srgb, var(--accent) 28%, transparent);
+}
+
+.primary-button,
+.secondary-button,
+.filter-row button,
+.project-links a,
+.contact-links a,
+.skill-pills span,
+.tag-row span,
+.world-chips span,
+.award-tags span {
+  border: 1.5px solid var(--line);
+  box-shadow: 3px 3px 0 color-mix(in srgb, var(--ink) 10%, transparent);
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+.filter-row button:hover,
+.project-links a:hover,
+.contact-links a:hover {
+  box-shadow: 4px 4px 0 color-mix(in srgb, var(--accent) 35%, transparent);
+}
+.project-card {
+  background: color-mix(in srgb, var(--card) 94%, var(--accent-soft));
+}
+
+.project-visual {
+  border: 1.5px solid var(--line);
+  background:
+    radial-gradient(circle at 20% 20%, var(--accent-soft), transparent 30%),
+    linear-gradient(135deg, #ffffff, var(--bg-soft));
+}
+
+.project-code {
+  border: 1.5px solid var(--ink);
+  background: var(--ink);
+  color: var(--bg);
+  box-shadow: 3px 3px 0 color-mix(in srgb, var(--accent) 45%, transparent);
 }
