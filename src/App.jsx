@@ -30,6 +30,24 @@ const projects = [
     },
   },
   {
+  title: "Monte Carlo: Thailand's EV Race",
+  subtitle: "Simulating uncertainty in Thailand’s EV transition",
+  year: "2026",
+  type: "Data Science",
+  image: "/assets/monte-carlo-ev-race.png",
+  filters: ["Economics", "Python", "Data"],
+  tags: ["Python", "Monte Carlo", "EVs", "Stock Simulation"],
+  code: "EV",
+  blurb:
+    "A Kaggle notebook simulating how Thailand’s EV market could shift under policy deadlines, subsidies, and competition between Japanese and Chinese automakers.",
+  detail:
+    "The project uses Monte Carlo simulation to model many possible future revenue and stock-price paths instead of relying on one fixed prediction. It connects Thailand’s role as the “Detroit of Asia” with EV subsidies, Chinese EV expansion, Japanese automaker pressure, and macroeconomic uncertainty.",
+  links: {
+    Kaggle: "https://www.kaggle.com/code/vaanyakapur/monte-carlo-thailand-s-ev-race",
+  
+  },
+  },
+  {
     title: "Narrative Volatility Index",
     subtitle: "Turning story pacing into data",
     year: "2026",

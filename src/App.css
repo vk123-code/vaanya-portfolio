@@ -1897,3 +1897,224 @@ body,
   color: var(--bg);
   box-shadow: 3px 3px 0 color-mix(in srgb, var(--accent) 45%, transparent);
 }
+/* custom editorial layer: less template, more handmade */
+
+:root {
+  --bg: #fbfbf7;
+  --bg-soft: #eef5f8;
+  --ink: #111111;
+  --muted: #555b60;
+  --line: rgba(17, 17, 17, 0.18);
+  --card: rgba(255, 255, 250, 0.94);
+  --card-strong: #ffffff;
+  --accent: #2f7ea1;
+  --accent-soft: #dceff7;
+  --green: #78a86f;
+  --red: #f05a42;
+  --yellow: #f3c95f;
+  --blue: #7db7d8;
+}
+
+[data-theme="dark"] {
+  --bg: #07111c;
+  --bg-soft: #0d1b2c;
+  --ink: #f4f7fb;
+  --muted: #a5b2c0;
+  --line: rgba(244, 247, 251, 0.17);
+  --card: rgba(12, 25, 40, 0.94);
+  --card-strong: #102236;
+  --accent: #9cd6ef;
+  --accent-soft: #18384d;
+  --green: #99dfc2;
+  --red: #ff7b66;
+  --yellow: #f7d879;
+  --blue: #9cd6ef;
+}
+
+/* background: dotted studio notebook instead of beige paper */
+
+.paper-noise {
+  opacity: 0.5;
+  background-image:
+    radial-gradient(circle, rgba(17, 17, 17, 0.22) 1px, transparent 1.2px),
+    linear-gradient(rgba(47, 126, 161, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47, 126, 161, 0.09) 1px, transparent 1px);
+  background-size: 28px 28px, 56px 56px, 56px 56px;
+}
+
+[data-theme="dark"] .paper-noise {
+  opacity: 0.22;
+  background-image:
+    radial-gradient(circle, rgba(244, 247, 251, 0.25) 1px, transparent 1.2px),
+    linear-gradient(rgba(156, 214, 239, 0.11) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(156, 214, 239, 0.11) 1px, transparent 1px);
+}
+
+/* stronger personal type system */
+
+.hero h1,
+.about-section h2,
+.section-header h2,
+.worlds-section h2,
+.notes-section h2,
+.contact-section h2 {
+  font-family: var(--display);
+  letter-spacing: -0.05em;
+}
+
+.project-card h3,
+.world-detail h3,
+.award-card h3,
+.note-card h3,
+.skill-card h3 {
+  font-family: var(--sans);
+  letter-spacing: -0.045em;
+  font-weight: 700;
+}
+
+.eyebrow {
+  letter-spacing: 0.22em;
+}
+
+/* cards: flatter, sharper, less AI glass */
+
+.about-card,
+.project-card,
+.world-detail,
+.note-card,
+.award-card,
+.skills-strip,
+.archive-window,
+.skill-card {
+  border: 1.5px solid var(--line);
+  box-shadow: 7px 7px 0 color-mix(in srgb, var(--ink) 9%, transparent);
+  backdrop-filter: none;
+}
+
+.about-card:hover,
+.project-card:hover,
+.world-detail:hover,
+.award-card:hover,
+.skill-card:hover {
+  box-shadow: 10px 10px 0 color-mix(in srgb, var(--accent) 24%, transparent);
+}
+
+/* project cards get their own little color personality */
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow:
+    22px 0 0 var(--red),
+    44px 0 0 var(--yellow);
+  opacity: 0.9;
+}
+
+.project-card:nth-child(3n + 1) {
+  border-color: color-mix(in srgb, var(--red) 50%, var(--line));
+}
+
+.project-card:nth-child(3n + 2) {
+  border-color: color-mix(in srgb, var(--blue) 65%, var(--line));
+}
+
+.project-card:nth-child(3n + 3) {
+  border-color: color-mix(in srgb, var(--green) 55%, var(--line));
+}
+
+.project-code {
+  border: 1.5px solid var(--ink);
+  background: var(--ink);
+  color: var(--bg);
+  box-shadow: 3px 3px 0 color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+/* buttons and pills feel more drawn, less default */
+
+.primary-button,
+.secondary-button,
+.filter-row button,
+.project-links a,
+.contact-links a,
+.skill-pills span,
+.tag-row span,
+.world-chips span,
+.award-tags span {
+  border: 1.5px solid var(--line);
+  box-shadow: 3px 3px 0 color-mix(in srgb, var(--ink) 10%, transparent);
+}
+
+.filter-row .active-filter,
+.filter-row button:hover,
+.project-links a:hover,
+.contact-links a:hover {
+  background: color-mix(in srgb, var(--accent-soft) 70%, white);
+  box-shadow: 4px 4px 0 color-mix(in srgb, var(--accent) 36%, transparent);
+}
+
+/* add a tiny scrapbook label to project archive */
+
+.projects-section .section-header::after {
+  content: "CASE FILES / DATA / WEB / LOCAL PROBLEMS";
+  display: inline-block;
+  margin-top: 14px;
+  padding: 8px 12px;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  background: var(--card-strong);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+}
+
+/* make images feel like pasted screenshots */
+
+.project-visual {
+  transform: rotate(-0.4deg);
+  transition: transform 180ms ease;
+}
+
+.project-card:hover .project-visual {
+  transform: rotate(0deg) scale(1.01);
+}
+
+/* make the hero archive panel less generic */
+
+.archive-window {
+  background:
+    radial-gradient(circle at 18% 18%, color-mix(in srgb, var(--red) 12%, transparent), transparent 24%),
+    radial-gradient(circle at 78% 24%, color-mix(in srgb, var(--blue) 20%, transparent), transparent 24%),
+    var(--card);
+}
+
+.floating-sticker {
+  box-shadow: 4px 4px 0 color-mix(in srgb, var(--ink) 10%, transparent);
+}
+
+.sticker-one {
+  background: color-mix(in srgb, var(--yellow) 35%, var(--card-strong));
+}
+
+.sticker-two {
+  background: color-mix(in srgb, var(--blue) 30%, var(--card-strong));
+}
+
+.sticker-three {
+  background: color-mix(in srgb, var(--red) 24%, var(--card-strong));
+}
+
+.sticker-four {
+  background: color-mix(in srgb, var(--green) 24%, var(--card-strong));
+}
