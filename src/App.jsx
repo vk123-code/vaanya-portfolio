@@ -827,7 +827,7 @@ function App() {
 
       <section id="contact" className="contact-section">
         <p className="eyebrow">contact</p>
-        <h2>say hello, नमस्ते, or สวัสดีค่ะ.</h2>
+        <h2>say hello,  नमस्ते, or  สวัสดีค่ะ.</h2>
         <p>
           reach out   :)
         </p>
