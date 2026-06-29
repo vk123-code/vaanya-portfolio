@@ -2119,3 +2119,193 @@ body,
   background: color-mix(in srgb, var(--green) 24%, var(--card-strong));
 }
 
+/* clean final UI patch: warmer intro, no project bars, fixed dark mode */
+
+/* 1. Warm hello, not blue */
+.greeting-type {
+  color: #e4ad2f;
+  text-shadow: none;
+}
+
+.cursor {
+  color: #d85f4a;
+}
+
+/* 2. Remove the top-right bar/tape on every project card */
+.project-card::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* 3. Remove the yellow/pink hue from field-notes.txt intro card */
+.archive-window {
+  background: var(--card) !important;
+}
+
+/* 4. Add color in smaller, more intentional ways */
+.project-card {
+  border: 1.5px solid var(--line);
+  box-shadow:
+    8px 8px 0 rgba(20, 19, 18, 0.07),
+    0 18px 44px rgba(18, 31, 42, 0.08);
+}
+
+.project-card:nth-child(4n + 1) {
+  border-left: 8px solid #e7ad36;
+}
+
+.project-card:nth-child(4n + 2) {
+  border-left: 8px solid #8fc3d6;
+}
+
+.project-card:nth-child(4n + 3) {
+  border-left: 8px solid #a7c99b;
+}
+
+.project-card:nth-child(4n + 4) {
+  border-left: 8px solid #e9a5b3;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    10px 10px 0 rgba(20, 19, 18, 0.09),
+    0 20px 48px rgba(18, 31, 42, 0.1);
+}
+
+/* 5. Make tags colorful but still minimal */
+.tag-row span:nth-child(4n + 1),
+.skill-pills span:nth-child(4n + 1),
+.award-tags span:nth-child(4n + 1),
+.world-chips span:nth-child(4n + 1) {
+  background: #fff0bd;
+}
+
+.tag-row span:nth-child(4n + 2),
+.skill-pills span:nth-child(4n + 2),
+.award-tags span:nth-child(4n + 2),
+.world-chips span:nth-child(4n + 2) {
+  background: #e5f3f7;
+}
+
+.tag-row span:nth-child(4n + 3),
+.skill-pills span:nth-child(4n + 3),
+.award-tags span:nth-child(4n + 3),
+.world-chips span:nth-child(4n + 3) {
+  background: #e9f3df;
+}
+
+.tag-row span:nth-child(4n + 4),
+.skill-pills span:nth-child(4n + 4),
+.award-tags span:nth-child(4n + 4),
+.world-chips span:nth-child(4n + 4) {
+  background: #f8e1e7;
+}
+
+/* 6. Make project image feel pasted, but not messy */
+.project-visual {
+  box-shadow: 4px 4px 0 rgba(20, 19, 18, 0.08);
+  transform: rotate(-0.25deg);
+}
+
+.project-card:nth-child(even) .project-visual {
+  transform: rotate(0.25deg);
+}
+
+.project-card:hover .project-visual {
+  transform: rotate(0deg) scale(1.01);
+}
+
+/* 7. Better filter buttons */
+.filter-row .active-filter {
+  background: #fff0bd;
+  color: var(--ink);
+  border-color: #d69c25;
+}
+
+.filter-row button:hover {
+  background: #fff7dd;
+}
+
+/* 8. Fix dark mode properly */
+[data-theme="dark"] {
+  --bg: #07111c;
+  --bg-soft: #0d1b2c;
+  --ink: #f4f7fb;
+  --muted: #aeb8c5;
+  --line: rgba(244, 247, 251, 0.18);
+  --card: rgba(12, 25, 40, 0.94);
+  --card-strong: #102236;
+  --accent: #f4c95d;
+  --accent-soft: #25364a;
+}
+
+[data-theme="dark"] .archive-window {
+  background: var(--card) !important;
+}
+
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .about-card,
+[data-theme="dark"] .world-detail,
+[data-theme="dark"] .award-card,
+[data-theme="dark"] .note-card,
+[data-theme="dark"] .skills-strip,
+[data-theme="dark"] .skill-card {
+  background: rgba(12, 25, 40, 0.95);
+  box-shadow:
+    8px 8px 0 rgba(0, 0, 0, 0.28),
+    0 18px 44px rgba(0, 0, 0, 0.22);
+}
+
+[data-theme="dark"] .project-card h3,
+[data-theme="dark"] .world-detail h3,
+[data-theme="dark"] .award-card h3,
+[data-theme="dark"] .note-card h3,
+[data-theme="dark"] .skill-card h3,
+[data-theme="dark"] .about-section h2,
+[data-theme="dark"] .section-header h2,
+[data-theme="dark"] .worlds-section h2,
+[data-theme="dark"] .notes-section h2,
+[data-theme="dark"] .contact-section h2,
+[data-theme="dark"] .name-line {
+  color: #f4f7fb;
+}
+
+[data-theme="dark"] .project-card p,
+[data-theme="dark"] .about-card p,
+[data-theme="dark"] .world-detail p,
+[data-theme="dark"] .award-card p,
+[data-theme="dark"] .note-card p,
+[data-theme="dark"] .skill-card p,
+[data-theme="dark"] .hero-copy {
+  color: #aeb8c5;
+}
+
+/* Dark mode pills should not be cream-on-white */
+[data-theme="dark"] .tag-row span,
+[data-theme="dark"] .skill-pills span,
+[data-theme="dark"] .award-tags span,
+[data-theme="dark"] .world-chips span {
+  background: #14253a !important;
+  color: #eef4fb !important;
+  border-color: rgba(244, 247, 251, 0.22);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .filter-row button {
+  color: #d8e0ea;
+}
+
+[data-theme="dark"] .filter-row .active-filter {
+  background: #26384d;
+  color: #ffffff;
+  border-color: #f4c95d;
+}
+
+[data-theme="dark"] .greeting-type {
+  color: #f4c95d;
+}
+
+[data-theme="dark"] .cursor {
+  color: #ff8b75;
+}
