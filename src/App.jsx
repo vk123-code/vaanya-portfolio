@@ -160,7 +160,7 @@ const projects = [
   year: "2026",
   type: "Data Science",
   image: "/assets/stylometric-author-id.png",
-  filters: ["Writing", "Python", "Data"],
+  filters: ["Writing", "R", "Data"],
   tags: ["Python", "NLP", "Stylometry", "Classification"],
   code: "SAI",
   blurb:
