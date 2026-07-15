@@ -155,6 +155,41 @@ const projects = [
     },
   },
   {
+  title: "Stylometric Author ID",
+  subtitle: "Identifying writing style through text patterns",
+  year: "2026",
+  type: "Data Science",
+  image: "/assets/stylometric-author-id.png",
+  filters: ["Writing", "Python", "Data"],
+  tags: ["Python", "NLP", "Stylometry", "Classification"],
+  code: "SAI",
+  blurb:
+    "A Kaggle notebook that explores whether authors can be identified through patterns in their writing style.",
+  detail:
+    "The project uses stylometry, which studies measurable writing habits like word length, sentence structure, punctuation, and vocabulary patterns. It turns text into numerical features, compares author fingerprints, and builds a simple classification workflow to predict which author is most likely behind a passage.",
+  links: {
+    Notebook: "https://www.kaggle.com/code/vaanyakapur/stylometric-author-id-anonymization-isbnwc",
+  },
+},
+{
+  title: "SET Event Study",
+  subtitle: "Measuring how markets react to major events",
+  year: "2026",
+  type: "Data Science",
+  image: "/assets/set-event-study.png",
+  filters: ["Economics", "Python", "Data"],
+  tags: ["Python", "Finance", "Event Study", "Abnormal Returns"],
+  code: "SET",
+  blurb:
+    "A Kaggle notebook studying how Thai stock prices respond around a specific market event.",
+  detail:
+    "The notebook uses an event study framework to compare expected stock returns against actual returns around an event date. It calculates abnormal returns and cumulative abnormal returns to see whether the event appears to have moved prices beyond normal market behavior.",
+  links: {
+    Notebook: "https://www.kaggle.com/code/vaanyakapur/set-equity-market-response",
+  },
+},
+
+  {
     title: "Thailand E-Commerce Price Tracker",
     subtitle: "Digital price pressure from Lazada data",
     year: "2026",
