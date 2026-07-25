@@ -518,6 +518,29 @@ function ProjectCard({ project, expanded, onToggle }) {
     </article>
   );
 }
+function FlipPortrait() {
+  return (
+    <div className="flip-portrait-wrap" tabIndex="0" aria-label="Hover to reveal real portrait">
+      <div className="flip-portrait">
+        <div className="flip-face flip-front">
+          <img
+            src="/assets/vaanya-clipart.png"
+            alt="Clipart portrait of Vaanya"
+          />
+          <span className="portrait-caption">hover me</span>
+        </div>
+
+        <div className="flip-face flip-back">
+          <img
+            src="/assets/vaanya-real.png"
+            alt="Portrait of Vaanya"
+          />
+          <span className="portrait-caption">hello again</span>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -651,6 +674,8 @@ function App() {
             </div>
           )}
         </div>
+
+        <FlipPortrait />
 
         <div className="hero-right" aria-label="interactive scrapbook panel">
           <div className="archive-window">
