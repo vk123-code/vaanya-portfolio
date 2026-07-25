@@ -675,9 +675,13 @@ function App() {
           )}
         </div>
 
-        <FlipPortrait />
+
 
         <div className="hero-right" aria-label="interactive scrapbook panel">
+  <div className="hero-visual-cluster">
+    <FlipPortrait />
+
+    <div className="archive-window"></div>
           <div className="archive-window">
             <div className="window-bar">
               <span />
@@ -697,12 +701,13 @@ function App() {
               <p>small tools, strange questions, useful little systems</p>
             </div>
 
-            <div className="floating-sticker sticker-one">python</div>
-            <div className="floating-sticker sticker-two">MUN</div>
-            <div className="floating-sticker sticker-three">tariffs</div>
-            <div className="floating-sticker sticker-four">novels</div>
-          </div>
-        </div>
+                  <div className="floating-sticker sticker-one">python</div>
+      <div className="floating-sticker sticker-two">MUN</div>
+      <div className="floating-sticker sticker-three">tariffs</div>
+      <div className="floating-sticker sticker-four">novels</div>
+    </div>
+  </div>
+</div>
       </section>
 
       <section id="about" className="about-section section-grid">

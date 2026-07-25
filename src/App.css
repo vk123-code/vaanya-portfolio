@@ -2559,3 +2559,85 @@ body,
     margin-top: 24px;
   }
 }
+/* hero portrait + field notes side-by-side */
+
+.hero-right {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.hero-visual-cluster {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 220px minmax(420px, 1fr);
+  align-items: center;
+  gap: 26px;
+}
+
+.hero-visual-cluster .flip-portrait-wrap {
+  width: 210px;
+  height: 270px;
+  margin-top: 0;
+  justify-self: end;
+}
+
+.hero-visual-cluster .archive-window {
+  width: 100%;
+  max-width: 620px;
+  justify-self: start;
+}
+
+/* make hover caption readable in both modes */
+
+.portrait-caption {
+  z-index: 5;
+  bottom: 14px;
+  background: #f4c95d;
+  color: #111111;
+  border-color: rgba(17, 17, 17, 0.22);
+  font-weight: 700;
+  opacity: 1;
+}
+
+[data-theme="dark"] .portrait-caption {
+  background: #f4c95d !important;
+  color: #07111c !important;
+  border-color: rgba(244, 201, 93, 0.55);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .flip-face img {
+  opacity: 0.95;
+}
+
+/* keep the portrait from eating the whole hero on smaller screens */
+
+@media (max-width: 1180px) {
+  .hero-visual-cluster {
+    grid-template-columns: 180px minmax(320px, 1fr);
+    gap: 18px;
+  }
+
+  .hero-visual-cluster .flip-portrait-wrap {
+    width: 175px;
+    height: 230px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-visual-cluster {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual-cluster .flip-portrait-wrap {
+    justify-self: center;
+    width: 170px;
+    height: 220px;
+  }
+
+  .hero-visual-cluster .archive-window {
+    justify-self: center;
+    max-width: 540px;
+  }
+}
