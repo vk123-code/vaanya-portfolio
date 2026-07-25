@@ -2709,3 +2709,84 @@ body,
     max-width: 560px !important;
   }
 }
+/* stop homepage field-notes card from getting cut off */
+
+.hero.section-grid {
+  width: min(1380px, calc(100% - 72px));
+  grid-template-columns: minmax(420px, 0.95fr) minmax(620px, 1.15fr);
+  gap: 42px;
+}
+
+.hero-visual-cluster {
+  grid-template-columns: 190px minmax(360px, 520px);
+  gap: 24px;
+  justify-content: start;
+}
+
+.hero-visual-cluster .flip-portrait-wrap {
+  width: 185px;
+  height: 235px;
+  justify-self: end;
+}
+
+.hero-visual-cluster .archive-window {
+  width: 100% !important;
+  max-width: 520px !important;
+  min-height: 390px;
+  justify-self: start;
+}
+
+.hero-visual-cluster .scrap-card {
+  width: 245px;
+  left: 10%;
+  top: 31%;
+}
+
+/* keep the stickers inside the card */
+.hero-visual-cluster .sticker-one {
+  right: 8%;
+  top: 23%;
+}
+
+.hero-visual-cluster .sticker-two {
+  right: 9%;
+  bottom: 23%;
+}
+
+.hero-visual-cluster .sticker-three {
+  left: 9%;
+  bottom: 16%;
+}
+
+.hero-visual-cluster .sticker-four {
+  left: 42%;
+  top: 16%;
+}
+
+/* tablet/mobile: stack instead of squeezing */
+@media (max-width: 1180px) {
+  .hero.section-grid {
+    width: min(1000px, calc(100% - 48px));
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual-cluster {
+    grid-template-columns: 180px minmax(320px, 520px);
+    justify-content: center;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-visual-cluster {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual-cluster .flip-portrait-wrap,
+  .hero-visual-cluster .archive-window {
+    justify-self: center;
+  }
+
+  .hero-visual-cluster .archive-window {
+    max-width: 100% !important;
+  }
+}
