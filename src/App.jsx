@@ -331,17 +331,17 @@ const fieldNotes = [
   {
     title: "Why numbers and stories feel related",
     note:
-      "A spreadsheet and a novel are both attempts to collate chaotic ideas. One uses columns, the other uses stories.",
+      "I started a crochet bag and realized the pattern was just a loop: repeat until it's deep enough. Same shape as the code I write. I keep wondering if everything I care about is secretly the same problem wearing different clothes.",
   },
   {
     title: "Currently thinking about",
     note:
-      "How a dashboard can become less of a graph museum and more of a decision tool.",
+      "I tried to measure the pacing of a novel: how fast its mood swings from one page to the next. I still am unsure whether it is possible to quantify good writing.",
   },
   {
     title: "A useful question",
     note:
-      "What does this data actually help someone do differently tomorrow morning?",
+      "My climate-shock simulator predicts the price of rice, but it has nothing to say about the person who grows it. Which of us that's a failure of?",
   },
 ];
 
@@ -637,78 +637,77 @@ function App() {
       </nav>
 
       <section className="hero section-grid">
-        <div className="hero-left">
-          <p className="eyebrow">personal archive / student builder / curious learner</p>
+  <div className="hero-left">
+    <p className="eyebrow">personal archive / student builder / curious learner</p>
 
-          <h1>
-            <Typewriter phrases={greetings} className="greeting-type" />
-            <span className="name-line">I’m Vaanya.</span>
-          </h1>
+    <h1>
+      <Typewriter phrases={greetings} className="greeting-type" />
+      <span className="name-line">I’m Vaanya.</span>
+    </h1>
 
-          <p className="hero-copy">
-            I build small tools for messy systems!
-          </p>
+    <p className="hero-copy">
+      I build small tools for messy systems!
+    </p>
 
-          <div className="rotating-line">
-            <span>currently filing:</span>
-            <Typewriter
-              phrases={identityLines}
-              className="identity-type"
-              speed={45}
-              pause={1400}
-            />
-          </div>
+    <div className="rotating-line">
+      <span>currently filing:</span>
+      <Typewriter
+        phrases={identityLines}
+        className="identity-type"
+        speed={45}
+        pause={1400}
+      />
+    </div>
 
-          <div className="hero-actions">
-            <a href="#projects" className="primary-button">
-              open the archive
-            </a>
-            <button className="secondary-button" onClick={() => setCommandOpen(true)}>
-              press v for commands
-            </button>
-          </div>
+    <div className="hero-actions">
+      <a href="#projects" className="primary-button">
+        open the archive
+      </a>
 
-          {secret && (
-            <div className="secret-note">
-              <span>found note:</span> originality is a practice, not a personality trait.
-            </div>
-          )}
+      <button className="secondary-button" onClick={() => setCommandOpen(true)}>
+        press v for commands
+      </button>
+    </div>
+
+    {secret && (
+      <div className="secret-note">
+        <span>found note:</span> originality is a practice, not a personality trait.
+      </div>
+    )}
+  </div>
+
+  <div className="hero-right" aria-label="interactive scrapbook panel">
+    <div className="hero-visual-cluster">
+      <FlipPortrait />
+
+      <div className="archive-window">
+        <div className="window-bar">
+          <span />
+          <span />
+          <span />
+          <p>field-notes.txt</p>
         </div>
 
+        <div className="scrap-card">
+          <div className="tiny-face">
+            <span>(</span>
+            <span>•</span>
+            <span>ᴗ</span>
+            <span>•</span>
+            <span>)</span>
+          </div>
 
+          <p>small tools, strange questions, useful little systems</p>
+        </div>
 
-        <div className="hero-right" aria-label="interactive scrapbook panel">
-  <div className="hero-visual-cluster">
-    <FlipPortrait />
-
-    <div className="archive-window"></div>
-          <div className="archive-window">
-            <div className="window-bar">
-              <span />
-              <span />
-              <span />
-              <p>field-notes.txt</p>
-            </div>
-
-            <div className="scrap-card">
-              <div className="tiny-face">
-                <span>(</span>
-                <span>•</span>
-                <span>ᴗ</span>
-                <span>•</span>
-                <span>)</span>
-              </div>
-              <p>small tools, strange questions, useful little systems</p>
-            </div>
-
-                  <div className="floating-sticker sticker-one">python</div>
-      <div className="floating-sticker sticker-two">MUN</div>
-      <div className="floating-sticker sticker-three">tariffs</div>
-      <div className="floating-sticker sticker-four">novels</div>
+        <div className="floating-sticker sticker-one">python</div>
+        <div className="floating-sticker sticker-two">MUN</div>
+        <div className="floating-sticker sticker-three">tariffs</div>
+        <div className="floating-sticker sticker-four">novels</div>
+      </div>
     </div>
   </div>
-</div>
-      </section>
+</section>
 
       <section id="about" className="about-section section-grid">
   <div>
