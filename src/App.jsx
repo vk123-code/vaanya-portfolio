@@ -595,9 +595,12 @@ function FlipPortrait() {
 }
 
 function App() {
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem("vaanya-theme") === "dark";
-  });
+  // Starts false on both the prerendered HTML and the first client render so
+  // the two match during hydration. The stored preference is adopted in an
+  // effect below; the inline script in index.html has already painted the
+  // right theme, so only the toggle icon settles after mount.
+  const [darkMode, setDarkMode] = useState(false);
+  const [themeLoaded, setThemeLoaded] = useState(false);
 
   const [activeFilter, setActiveFilter] = useState("All");
   const [expandedProject, setExpandedProject] = useState("");
@@ -607,9 +610,17 @@ function App() {
   const [secret, setSecret] = useState(false);
 
   useEffect(() => {
+    setDarkMode(localStorage.getItem("vaanya-theme") === "dark");
+    setThemeLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    // Guarded so the default `false` can't overwrite a stored preference
+    // before the effect above has read it.
+    if (!themeLoaded) return;
     document.documentElement.setAttribute("data-theme", darkMode ? "dark" : "light");
     localStorage.setItem("vaanya-theme", darkMode ? "dark" : "light");
-  }, [darkMode]);
+  }, [darkMode, themeLoaded]);
 
   useEffect(() => {
     const positions = [22, 36, 50, 64, 78];
