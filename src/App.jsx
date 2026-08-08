@@ -507,7 +507,11 @@ function PetToggle({ darkMode, onClick, railPosition }) {
 
 function ProjectCard({ project, expanded, onToggle }) {
   return (
-    <article className={`project-card ${expanded ? "expanded" : ""}`}>
+    <article
+      className={`project-card ${expanded ? "expanded" : ""} ${
+        project.type?.toUpperCase() === "BOOK" ? "book-card" : ""
+      }`}
+    >
       <div className="project-visual">
         <img
   src={project.image}
@@ -830,7 +834,7 @@ function App() {
     ))}
   </div>
 
-  <div className={`project-grid ${project.type === "BOOK" ? "book-card" : ""}`}>
+  <div className="project-grid">
     {visibleProjects.map((project) => (
       <ProjectCard
         key={project.title}
