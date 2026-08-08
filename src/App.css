@@ -2790,3 +2790,57 @@ body,
     max-width: 100% !important;
   }
 }
+/* =========================================================
+   BOOKS IN PROJECT ARCHIVE
+   ========================================================= */
+
+.project-card.book-card {
+  overflow: hidden;
+}
+
+/* Book covers stay portrait instead of being forced
+   into the normal project thumbnail ratio */
+.project-card.book-card img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+/* Slightly smaller image area on very large archive cards */
+.project-card.book-card .project-image {
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+}
+
+/* Book label */
+.project-card.book-card::before {
+  content: "BOOK";
+  display: inline-block;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 3;
+
+  padding: 6px 10px;
+
+  border: 1px solid currentColor;
+  border-radius: 999px;
+
+  font-family: monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+
+  background: rgba(255, 255, 255, 0.88);
+}
+
+/* Make sure the label has somewhere to sit */
+.project-card.book-card {
+  position: relative;
+}
+
+/* Dark mode */
+.dark .project-card.book-card::before,
+[data-theme="dark"] .project-card.book-card::before {
+  background: rgba(15, 25, 40, 0.92);
+}

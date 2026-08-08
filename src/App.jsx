@@ -224,7 +224,55 @@ const projects = [
       GitHub: "https://github.com/vk123-code/krung-thep-blackspots",
     },
   },
-  
+  {
+  title: "The End",
+  subtitle: "Dystopian novel",
+  year: "2026",
+  type: "Book",
+  image: "/assets/the-end.jpg",
+  filters: ["Writing", "Books"],
+  tags: ["Dystopian", "Socioeconomic Inequality", "Climate"],
+  code: "TE",
+  blurb:
+    "A dystopian world where the Earth has stopped rotating, exploring how society becomes segregated based on socioeconomic status.",
+  detail:
+    "A dystopian novel set in a world where the Earth has stopped rotating. As humanity adapts to an increasingly divided planet, the story examines how socioeconomic status determines where people can live, how they survive, and what opportunities remain available to them.",
+  links: {}
+},
+
+{
+  title: "Emerging Echoes",
+  subtitle: "Dystopian novel",
+  year: "2026",
+  type: "Book",
+  image: "/assets/emerging-echoes.jpg",
+  filters: ["Writing", "Books"],
+  tags: ["Dystopian", "AI Ethics", "Artificial Intelligence"],
+  code: "EE",
+  blurb:
+    "A dystopian story about AI taking over the world, exploring AI ethics, technological dependence, and control.",
+  detail:
+    "A dystopian novel exploring a world shaped by artificial intelligence and technological control. The story examines the ethical questions surrounding AI, the consequences of giving technology increasing autonomy, and what happens when humanity becomes dependent on the systems it creates.",
+  links: {}
+},
+
+{
+  title: "Where the River Sleeps",
+  subtitle: "Climate speculative fiction",
+  year: "2026",
+  type: "Book",
+  image: "/assets/where-the-river-sleeps.jpg",
+  filters: ["Writing", "Books"],
+  tags: ["Climate", "Speculative Fiction", "Bengal Famine"],
+  code: "WRS",
+  blurb:
+    "A climate speculative story told through a dual storyline connecting a speculative future with the Bengal Famine.",
+  detail:
+    "A climate speculative story told through two interconnected timelines. The novel explores the relationship between climate, memory, and human survival while drawing connections between a speculative future and the Bengal Famine.",
+  links: {
+    Amazon: "https://www.amazon.in/dp/B0HCH4T7G4",
+  }
+},
 ];
 
 const worlds = [
@@ -782,7 +830,7 @@ function App() {
     ))}
   </div>
 
-  <div className="project-grid">
+  <div className={`project-grid ${project.type === "BOOK" ? "book-card" : ""}`}>
     {visibleProjects.map((project) => (
       <ProjectCard
         key={project.title}
