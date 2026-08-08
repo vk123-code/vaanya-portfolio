@@ -2799,18 +2799,24 @@ body,
 }
 
 /* Book covers stay portrait instead of being forced
-   into the normal project thumbnail ratio */
-.project-card.book-card img {
-  width: 100%;
-  aspect-ratio: 2 / 3;
-  object-fit: cover;
-  display: block;
+   into the normal project thumbnail ratio. The frame takes the
+   card's full row height and derives its width from the cover
+   ratio, so the art is never cropped. */
+.project-card.book-card .project-visual {
+  aspect-ratio: 1 / 1.414;
+  width: min(100%, 210px);
+  height: auto;
+  /* clears the 300px floor on .project-visual, which would
+     otherwise override the height the aspect ratio computes */
+  min-height: 0;
+  justify-self: center;
+  align-self: center;
 }
 
-/* Slightly smaller image area on very large archive cards */
-.project-card.book-card .project-image {
-  aspect-ratio: 2 / 3;
-  overflow: hidden;
+/* contain (not cover) so covers that aren't exactly 1:1.414
+   letterbox instead of losing their title or author line */
+.project-card.book-card .project-visual img {
+  object-fit: contain;
 }
 
 /* Book label */
