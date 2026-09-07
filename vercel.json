@@ -1,14 +1,14 @@
 {
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "vaanya-portfolio-three.vercel.app"
         }
       ],
-      "destination": "https://www.vaanyakapur.com/:path*",
+      "destination": "https://www.vaanyakapur.com/$1",
       "permanent": true
     }
   ]
