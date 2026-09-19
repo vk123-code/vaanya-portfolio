@@ -16,7 +16,7 @@ const template = readFileSync(indexPath, "utf8");
 
 if (!template.includes(PLACEHOLDER)) {
   throw new Error(
-    `prerender: could not find ${PLACEHOLDER} in dist/index.html — nothing was injected.`
+    `prerender: could not find ${PLACEHOLDER} in dist/index.html, so nothing was injected.`
   );
 }
 
