@@ -227,7 +227,7 @@ const projects = [
   {
   title: "The End",
   subtitle: "Dystopian novel",
-  year: "2026",
+  year: "2022",
   type: "Book",
   image: "/assets/the-end.jpg",
   filters: ["Writing", "Books"],
@@ -243,7 +243,7 @@ const projects = [
 {
   title: "Emerging Echoes",
   subtitle: "Dystopian novel",
-  year: "2026",
+  year: "2025",
   type: "Book",
   image: "/assets/emerging-echoes.jpg",
   filters: ["Writing", "Books"],
@@ -631,7 +631,7 @@ function FlipBooks() {
             <ul className="book-list">
               <li>
                 <span>Emerging Echoes</span>
-                <span className="book-year">2026</span>
+                <span className="book-year">2025</span>
               </li>
               <li>
                 <a
@@ -646,7 +646,7 @@ function FlipBooks() {
               </li>
               <li>
                 <span>The End</span>
-                <span className="book-year">2026</span>
+                <span className="book-year">2022</span>
               </li>
             </ul>
 
