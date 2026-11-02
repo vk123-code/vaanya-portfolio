@@ -602,6 +602,74 @@ function FlipPortrait() {
   );
 }
 
+function FlipBooks() {
+  const [flipped, setFlipped] = useState(false);
+
+  function toggle() {
+    setFlipped((value) => !value);
+  }
+
+  return (
+    <figure className="about-books">
+      <div
+        className={`about-books-card${flipped ? " is-flipped" : ""}`}
+        role="button"
+        tabIndex="0"
+        aria-label={flipped ? "Show the list of novels" : "Show the photo"}
+        onClick={toggle}
+        onKeyDown={(event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            toggle();
+          }
+        }}
+      >
+        <div className="about-books-inner">
+          <div className="flip-face about-books-front">
+            <p className="eyebrow">three novels</p>
+
+            <ul className="book-list">
+              <li>
+                <span>Emerging Echoes</span>
+                <span className="book-year">2026</span>
+              </li>
+              <li>
+                <a
+                  href="https://www.amazon.in/dp/B0HCH4T7G4"
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={(event) => event.stopPropagation()}
+                >
+                  Where the River Sleeps <span aria-hidden="true">→</span>
+                </a>
+                <span className="book-year">2026</span>
+              </li>
+              <li>
+                <span>The End</span>
+                <span className="book-year">2026</span>
+              </li>
+            </ul>
+
+            <span className="portrait-caption">find them on Amazon</span>
+          </div>
+
+          <div className="flip-face about-books-back">
+            <img
+              src="/assets/vaanya-books.jpg"
+              alt="Vaanya holding her three published novels"
+              loading="lazy"
+              width="900"
+              height="1200"
+            />
+          </div>
+        </div>
+      </div>
+
+      <figcaption>three novels, finally on paper</figcaption>
+    </figure>
+  );
+}
+
 function App() {
   // Starts false on both the prerendered HTML and the first client render so
   // the two match during hydration. The stored preference is adopted in an
@@ -785,16 +853,7 @@ function App() {
     <p className="eyebrow">about me</p>
     <h2>numbers and stories are not opposites.</h2>
 
-    <figure className="about-photo">
-      <img
-        src="/assets/vaanya-books.jpg"
-        alt="Vaanya holding her three published novels"
-        loading="lazy"
-        width="900"
-        height="1200"
-      />
-      <figcaption>three novels, finally on paper</figcaption>
-    </figure>
+    <FlipBooks />
   </div>
 
   <div className="about-card">
