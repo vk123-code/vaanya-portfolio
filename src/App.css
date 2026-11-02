@@ -491,6 +491,34 @@ footer {
   font-size: clamp(2.1rem, 5vw, 4.8rem);
 }
 
+.about-photo {
+  position: relative;
+  width: min(100%, 380px);
+  margin: 34px 0 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-big);
+  background: var(--card);
+  box-shadow: 0 24px 70px var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.about-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--radius-big) - 14px);
+}
+
+.about-photo figcaption {
+  margin: 14px 4px 4px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
 .about-card {
   position: relative;
   width: 100%;

@@ -784,6 +784,17 @@ function App() {
   <div>
     <p className="eyebrow">about me</p>
     <h2>numbers and stories are not opposites.</h2>
+
+    <figure className="about-photo">
+      <img
+        src="/assets/vaanya-books.jpg"
+        alt="Vaanya holding her three published novels"
+        loading="lazy"
+        width="900"
+        height="1200"
+      />
+      <figcaption>three novels, finally on paper</figcaption>
+    </figure>
   </div>
 
   <div className="about-card">
