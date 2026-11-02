@@ -286,10 +286,10 @@ const worlds = [
   },
   {
     title: "MUN",
-    role: "Secretary General / Chair",
+    role: "Secretary-General / Head Chair",
     meta: "diplomacy / debate / global systems",
     detail:
-      "The room where I learned how disagreement can become structure. Best Delegate @ BKKMUN. Invited to chair the first ever National Cabinet Committee in Thailand. Head Chair for the WTO @ IASASMUN 2025. Lead BKK MSMUN - largest MSMUN conference in SEA.",
+      "The room where I learned how disagreement can become structure. Secretary-General of my school's MUN. Head Chair of DISEC @ IASAS 2026. Best Delegate @ BKKMUN. Invited to chair the first ever National Cabinet Committee in Thailand. Head Chair for the WTO @ IASASMUN 2025. Lead BKK MSMUN - largest MSMUN conference in SEA.",
     chips: ["WTO", "chairing", "public speaking"],
   },
   {
@@ -318,6 +318,14 @@ const worlds = [
   },
 ];
 const accolades = [
+  {
+    title: "The Queen's Commonwealth Writing Competition",
+    meta: "Silver Award · 2026",
+    kind: "writing",
+    detail:
+      "Awarded Silver in The Queen's Commonwealth Writing Competition 2026, a record-breaking year that drew 53,840 entries from across the 56 member countries of the Commonwealth.",
+    shows: ["creative writing", "global community", "voice"],
+  },
   {
     title: "Lumiere Scholar Essay Award",
     meta: "Winner · Jan 2026",
@@ -905,8 +913,8 @@ function App() {
   <div className="section-header accolades-header">
     <h2>accolades</h2>
     <p>
-      A few awards, programs, and recognitions that shaped how I think about research,
-      public speaking, sustainability, statistics, and local problem-solving.
+      A few awards, programs, and recognitions that shaped how I think about writing,
+      research, public speaking, sustainability, statistics, and local problem-solving.
     </p>
   </div>
 
